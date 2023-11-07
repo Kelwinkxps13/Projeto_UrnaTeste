@@ -1,4 +1,4 @@
-<div>
+<div align="center">
 
 ## Urna eletronica em java
        
