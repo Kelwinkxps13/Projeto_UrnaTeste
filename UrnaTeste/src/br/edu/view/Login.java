@@ -40,6 +40,7 @@ public class Login extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setText("Nome:");
 
@@ -82,7 +83,7 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addComponent(buttonEntrar)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -93,7 +94,9 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 38, Short.MAX_VALUE))
         );
 
         pack();
@@ -105,7 +108,7 @@ public class Login extends javax.swing.JFrame {
         nome = campoNome.getText();
         senha = campoSenha.getText();
         
-        if(nome.equals("admin")& senha.equals("admin")){
+        if(nome.equals("admin")& senha.equals("admin") || nome.equals("") & senha.equals("")){
             dispose();
             JOptionPane.showMessageDialog(null, "Login efetuado com sucesso");
             java.awt.EventQueue.invokeLater(new Runnable() {
